@@ -40,10 +40,10 @@ Public Class MainFrame
     End Sub
 
     Private Sub TheSerialPort_DataReceived(sender As Object, e As SerialDataReceivedEventArgs) Handles TheSerialPort.DataReceived
-        ReceivedText()
+        ReceivedText(TheSerialPort.ReadExisting())
     End Sub
 
-    Private Sub ReceivedText()
+    Private Sub ReceivedText(ByVal [Text] As String)
         If OutputText.InvokeRequired Then
             Dim data As New SetTextCallBack(AddressOf ReceivedText)
             Invoke(data, New Object() {(Text)})
