@@ -51,4 +51,27 @@ Public Class MainFrame
             OutputText.Text &= [Text]
         End If
     End Sub
+
+    Private Function ReceiveSerialData() As String
+        Dim data As String = ""
+        Dim COM As SerialPort = Nothing
+
+        Try
+            COM = My.Computer.Ports.OpenSerialPort(PortBox.Text)
+            COM.ReadTimeout = 10000
+            Do
+                Dim Incoming As String = COM.ReadLine()
+                If Incoming Is Nothing Then
+                    Exit Do
+                Else
+                    data &= Incoming & vbCrLf
+                End If
+            Loop
+        Catch ex As TimeoutException
+            data &= "Error: Serial Port read time out."
+        Finally
+            If COM IsNot Nothing Then COM.Close()
+        End Try
+        Return data
+    End Function
 End Class
