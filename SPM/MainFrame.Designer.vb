@@ -27,7 +27,7 @@ Partial Class MainFrame
         Me.InitButton = New System.Windows.Forms.Button()
         Me.CloseButton = New System.Windows.Forms.Button()
         Me.PortBox = New System.Windows.Forms.ComboBox()
-        Me.BandBox = New System.Windows.Forms.ComboBox()
+        Me.BaudBox = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -72,14 +72,14 @@ Partial Class MainFrame
         Me.PortBox.Size = New System.Drawing.Size(121, 21)
         Me.PortBox.TabIndex = 3
         '
-        'BandBox
+        'BaudBox
         '
-        Me.BandBox.FormattingEnabled = True
-        Me.BandBox.Items.AddRange(New Object() {"2400", "4800", "9600", "19200"})
-        Me.BandBox.Location = New System.Drawing.Point(308, 48)
-        Me.BandBox.Name = "BandBox"
-        Me.BandBox.Size = New System.Drawing.Size(121, 21)
-        Me.BandBox.TabIndex = 4
+        Me.BaudBox.FormattingEnabled = True
+        Me.BaudBox.Items.AddRange(New Object() {"2400", "4800", "9600", "19200"})
+        Me.BaudBox.Location = New System.Drawing.Point(308, 48)
+        Me.BaudBox.Name = "BaudBox"
+        Me.BaudBox.Size = New System.Drawing.Size(121, 21)
+        Me.BaudBox.TabIndex = 4
         '
         'Label1
         '
@@ -97,7 +97,7 @@ Partial Class MainFrame
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(31, 13)
         Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Band"
+        Me.Label2.Text = "Baud"
         '
         'Label3
         '
@@ -133,6 +133,9 @@ Partial Class MainFrame
         Me.OutputText.TabIndex = 10
         Me.OutputText.Text = ""
         '
+        'TheSerialPort
+        '
+        '
         'MainFrame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -144,7 +147,7 @@ Partial Class MainFrame
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.BandBox)
+        Me.Controls.Add(Me.BaudBox)
         Me.Controls.Add(Me.PortBox)
         Me.Controls.Add(Me.CloseButton)
         Me.Controls.Add(Me.InitButton)
@@ -161,7 +164,7 @@ Partial Class MainFrame
     Friend WithEvents InitButton As Button
     Friend WithEvents CloseButton As Button
     Friend WithEvents PortBox As ComboBox
-    Friend WithEvents BandBox As ComboBox
+    Friend WithEvents BaudBox As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
