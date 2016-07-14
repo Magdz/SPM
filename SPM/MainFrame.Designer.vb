@@ -35,6 +35,7 @@ Partial Class MainFrame
         Me.InputText = New System.Windows.Forms.RichTextBox()
         Me.OutputText = New System.Windows.Forms.RichTextBox()
         Me.TheSerialPort = New System.IO.Ports.SerialPort(Me.components)
+        Me.ReadButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'WriteButton
@@ -48,7 +49,7 @@ Partial Class MainFrame
         '
         'InitButton
         '
-        Me.InitButton.Location = New System.Drawing.Point(81, 0)
+        Me.InitButton.Location = New System.Drawing.Point(162, 0)
         Me.InitButton.Name = "InitButton"
         Me.InitButton.Size = New System.Drawing.Size(75, 23)
         Me.InitButton.TabIndex = 1
@@ -57,7 +58,7 @@ Partial Class MainFrame
         '
         'CloseButton
         '
-        Me.CloseButton.Location = New System.Drawing.Point(162, 0)
+        Me.CloseButton.Location = New System.Drawing.Point(243, 0)
         Me.CloseButton.Name = "CloseButton"
         Me.CloseButton.Size = New System.Drawing.Size(75, 23)
         Me.CloseButton.TabIndex = 2
@@ -136,11 +137,21 @@ Partial Class MainFrame
         'TheSerialPort
         '
         '
+        'ReadButton
+        '
+        Me.ReadButton.Location = New System.Drawing.Point(81, 0)
+        Me.ReadButton.Name = "ReadButton"
+        Me.ReadButton.Size = New System.Drawing.Size(75, 23)
+        Me.ReadButton.TabIndex = 11
+        Me.ReadButton.Text = "Read"
+        Me.ReadButton.UseVisualStyleBackColor = True
+        '
         'MainFrame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(568, 301)
+        Me.Controls.Add(Me.ReadButton)
         Me.Controls.Add(Me.OutputText)
         Me.Controls.Add(Me.InputText)
         Me.Controls.Add(Me.Label4)
@@ -172,4 +183,5 @@ Partial Class MainFrame
     Friend WithEvents InputText As RichTextBox
     Friend WithEvents OutputText As RichTextBox
     Friend WithEvents TheSerialPort As IO.Ports.SerialPort
+    Friend WithEvents ReadButton As Button
 End Class

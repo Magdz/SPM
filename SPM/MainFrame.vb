@@ -52,6 +52,14 @@ Public Class MainFrame
         End If
     End Sub
 
+    Private Sub ReadButton_Click(sender As Object, e As EventArgs) Handles ReadButton.Click
+        Try
+            Dim data = ReceiveSerialData()
+            OutputText.Text &= data
+        Catch
+        End Try
+    End Sub
+
     Private Function ReceiveSerialData() As String
         Dim data As String = ""
         Dim COM As SerialPort = Nothing
